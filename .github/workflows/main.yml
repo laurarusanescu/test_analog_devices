@@ -1,0 +1,23 @@
+name: Build and Install CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps: 
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: sudo apt update && sudo apt install -y build-essential
+
+      - name: Build proj 
+        run: make
+        
+      - name: Install proj
+        run: sudo make install
