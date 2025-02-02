@@ -21,3 +21,10 @@ jobs:
         
       - name: Install proj
         run: sudo make install
+      - name: verift install
+        run: |
+          if [ ! -f /usr/local/bin/your_binary ]; then
+            echo "Installation failed! :("
+            exit 1
+          fi 
+          echo "Installation succesful :)"
