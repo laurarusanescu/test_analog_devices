@@ -23,7 +23,7 @@ jobs:
         run: sudo make install
       - name: verift install
         run: |
-          if [ ! -f /usr/local/bin/your_binary ]; then
+          if [ ! -f /usr/local/bin/iio_fm_radio ]; then
             echo "Installation failed! :("
             exit 1
           fi 
